@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.myshopping.app</groupId>
+  <artifactId>eshopping</artifactId>
+  <packaging>pom</packaging>
+  <version>4.0-SNAPSHOT</version>
+  <name>eshopping</name>
+  <url>http://maven.apache.org</url>
+  <!-- repositories for the checkstyle configuration TSP CSC -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>tsp-csc-checkstyle-config-stable</id>
+      <name>TSP CSC Checkstyle configuration, stable</name>
+      <url>http://www-inf.telecom-sudparis.eu/COURS/CSC4102/maven-repository/stable/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>tsp-csc-checkstyle-config-snapshot</id>
+      <name>TSP CSC Checkstyle configuration, snapshot</name>
+      <url>http://www-inf.telecom-sudparis.eu/COURS/CSC4102/maven-repository/snapshot/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <glassfish.version>5.0</glassfish.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <!-- maven-eclipse configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.10</version>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+        </configuration>
+      </plugin>
+      <!-- java compiler configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <!-- surefire configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.19.1</version>
+        <configuration>
+          <enableAssertions>true</enableAssertions>
+          <reuseForks>false</reuseForks>
+        </configuration>
+      </plugin>
+      <!-- source packaging configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- javadoc packaging in jar configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <docfilessubdirs>true</docfilessubdirs>
+              <detectOfflineLinks>false</detectOfflineLinks>
+              <detectJavaApiLink>false</detectJavaApiLink>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- checkstyle configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.0.0</version>
+        <dependencies>
+          <dependency>
+            <groupId>eu.telecomsudparis.csc</groupId>
+            <artifactId>tsp-csc-config-checkstyle</artifactId>
+            <version>1.1-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <!-- site configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.6</version>
+        <configuration>
+          <locales>fr</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- reports in the maven site -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.4</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <configLocation>config/checkstyle/sun_checks_adapted_to_tsp_csc.xml</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>false</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <modules>
+    <module>ejb-eshopping-api</module>
+    <module>ejb-eshopping-client</module>
+    <module>ejb-eshopping-bean</module>
+    <module>ejb-eshopping-entity</module>
+  </modules>
+</project>

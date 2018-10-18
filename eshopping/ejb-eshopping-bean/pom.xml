@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>eshopping</artifactId>
+    <groupId>com.myshopping.app</groupId>
+    <version>4.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.myshopping.app</groupId>
+  <artifactId>ejb-eshopping-bean</artifactId>
+  <version>4.0</version>
+
+  <name>ejb-eshopping-bean</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>javax</groupId>
+          <artifactId>javaee-api</artifactId>
+          <version>7.0</version>
+      </dependency>
+    <dependency>
+      <groupId>com.myshopping.app</groupId>
+      <artifactId>ejb-eshopping-api</artifactId>
+      <version>4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.myshopping.app</groupId>
+      <artifactId>ejb-eshopping-entity</artifactId>
+      <version>4.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>entity-bean</finalName>
+    <plugins>
+      <!-- build the ejb jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <jarName>entity-bean</jarName>
+          <ejbVersion>3.2</ejbVersion>
+        </configuration>
+      </plugin>
+      <!-- include the classes of the dependency modules -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.myshopping.app</groupId>
+                  <artifactId>ejb-eshopping-entity</artifactId>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>com.myshopping.app</groupId>
+                  <artifactId>ejb-eshopping-api</artifactId>
+                  <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
