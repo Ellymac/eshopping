@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * The article entity
 **/
 @Entity
-@Table(name = "ARTICLE_TABLE")
+@Table(name = "ARTICLE")
 public class Article {
     /**
      * the unique identifier.
@@ -17,13 +17,16 @@ public class Article {
     private int id;
     /**
      * the description of the article
-
      */
     private String description;
     /**
      * the category of the article
      */
     private String category;
+    /**
+     * the number of available articles
+     */
+    private int nbAvailable;
 
     @Id
     public int getId() {
@@ -50,4 +53,7 @@ public class Article {
         this.category = category;
     }
 
+    public int getNbAvailable() { return nbAvailable; }
+
+    public void setNbAvailable(int nbAvailable) { this.nbAvailable = nbAvailable; }
 }

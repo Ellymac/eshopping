@@ -1,0 +1,21 @@
+cd ./eshopping
+
+#### COMPILE AND DEPLOY ####
+(. java8;mvn clean install) // compile
+(. java8;asadmin start-domain domain1; asadmin start-data
+base; asadmin deploy ejb-eshopping-bean/target/entity-bean.jar ) // strt domain + database + deploy application
+
+Glassfish admin at localhost:4848
+
+#### RUN CLIENT ####
+(. java8; cd ejb-eshopping-client/; java -classpath $CLAS
+SPATH:../ejb-eshopping-bean/target/entity-bean.jar:../ejb-eshopping-api/target/ejb-eshopping-api-4.0.jar:target/ejb-eshopping-client-4.0.jar com/myshopping/app/AdministrationClient) // runs the main of "AdministrationClient"
+
+#### UNDEPLOY AND STOP ####
+(. java8;asadmin undeploy entity-bean; asadmin stop-database; asadmin stop-domain domain1) // undeploy application + stop database + stop domain
+
+
+#### ADMINISTRATE DB ####
+$> rlwrap ij // rlwrap useful to have cmd history with up/down arrows
+ij> connect 'jdbc:derby://localhost:1527/sun-appserv-samples';
+ij> select * from Order;

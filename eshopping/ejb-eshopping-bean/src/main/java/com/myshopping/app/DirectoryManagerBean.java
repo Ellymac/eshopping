@@ -83,4 +83,12 @@ public class DirectoryManagerBean implements DirectoryManager {
     public String updateArticle(int id, String desc, String cat) {
         return null;
     }
+
+    @Override
+    public boolean isArticleAvailable(Article a) {
+        if(a.getNbAvailable() > 0)
+            return true;
+        else
+            return false;
+    }
 }

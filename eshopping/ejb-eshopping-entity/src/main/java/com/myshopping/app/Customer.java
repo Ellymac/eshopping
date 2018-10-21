@@ -1,14 +1,8 @@
 package com.myshopping.app;
 
-import static javax.persistence.CascadeType.ALL;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  * The customer entity.
@@ -40,11 +34,6 @@ public class Customer implements Serializable {
      * the email address of the customer.
      */
     private String email;
-    /**
-     * the collection of orders.
-     */
-    private Collection<Order> orders = new ArrayList<Order>();
-
 
     /**
      * gets the unique pseudonym.
@@ -97,25 +86,4 @@ public class Customer implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    /**
-     * gets the collection of orders.
-     *
-     * @return the collection.
-     */
-    @OneToMany(cascade = ALL, mappedBy = "customer")
-    public Collection<Order> getOrders() {
-        return orders;
-    }
-
-    /**
-     * sets the collection of orders.
-     *
-     * @param newValue
-     *            the new collection.
-     */
-    public void setOrders(final Collection<Order> newValue) {
-        this.orders = newValue;
-    }
-
 }

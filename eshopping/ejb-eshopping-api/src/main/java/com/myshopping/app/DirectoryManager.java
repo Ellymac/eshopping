@@ -56,4 +56,10 @@ public interface DirectoryManager {
      * @return the string "OK" if there is no problem.
      */
     String updateArticle(int id, String desc, String cat);
+    /**
+     * Check Article availability
+     *
+     * @return true if available, false if not available.
+     */
+    boolean isArticleAvailable(Article a);
 }
