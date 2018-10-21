@@ -11,6 +11,9 @@ Glassfish admin at localhost:4848
 (. java8; cd ejb-eshopping-client/; java -classpath $CLAS
 SPATH:../ejb-eshopping-bean/target/entity-bean.jar:../ejb-eshopping-api/target/ejb-eshopping-api-4.0.jar:target/ejb-eshopping-client-4.0.jar com/myshopping/app/AdministrationClient) // runs the main of "AdministrationClient"
 
+(. java8; cd ejb-eshopping-client/; java -classpath $CLAS
+SPATH:../ejb-eshopping-bean/target/entity-bean.jar:../ejb-eshopping-api/target/ejb-eshopping-api-4.0.jar:target/ejb-eshopping-client-4.0.jar com/myshopping/app/OrderClient) // runs the main of "OrderClient"
+
 #### UNDEPLOY AND STOP ####
 (. java8;asadmin undeploy entity-bean; asadmin stop-database; asadmin stop-domain domain1) // undeploy application + stop database + stop domain
 

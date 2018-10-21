@@ -39,6 +39,6 @@ public final class AdministrationClient
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println( "I am Groot" );
+        System.out.println( "I am Administration Client" );
     }
 }

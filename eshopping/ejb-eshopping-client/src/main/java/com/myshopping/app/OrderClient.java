@@ -19,6 +19,6 @@ public final class OrderClient {
      * @param args
      */
     public static void main( String[] args ) {
-        
+        System.out.println("I am Order Client");
     }
 }

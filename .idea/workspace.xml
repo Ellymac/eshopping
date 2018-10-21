@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cf8d684-0ab2-454b-bce3-5a5f160a1772" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/OrderManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Order.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Order.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Order.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Order.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/classes/com/myshopping/app/DirectoryManager.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/classes/com/myshopping/app/DirectoryManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-javadoc.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-javadoc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-test-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0-test-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/ejb-eshopping-api-4.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Article.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Article.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Customer.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Order.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/DirectoryManager.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/DirectoryManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/DirectoryManagerBean.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/classes/com/myshopping/app/DirectoryManagerBean.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-javadoc.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-javadoc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-test-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/entity-bean-test-sources.jar" />
@@ -24,14 +26,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/ejb-eshopping-client-4.0.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/ejb-eshopping-client-4.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Article.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Article.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Customer.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Order.class" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/classes/com/myshopping/app/Order.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-javadoc.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-javadoc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-test-sources.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0-test-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0.jar" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/ejb-eshopping-entity-4.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/allclasses-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/allclasses-noframe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/com/myshopping/app/DirectoryManager.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/com/myshopping/app/DirectoryManager.html" />
@@ -46,9 +45,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/index-all.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/index-all.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/index.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/overview-tree.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/apidocs/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/surefire-reports/com.myshopping.app.AppTest.txt" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/surefire-reports/com.myshopping.app.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/allclasses-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/allclasses-noframe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/com/myshopping/app/DirectoryManagerBean.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/com/myshopping/app/DirectoryManagerBean.html" />
@@ -64,11 +64,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/index.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/overview-tree.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/apidocs/overview-tree.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/surefire-reports/com.myshopping.app.AppTest.txt" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/surefire-reports/com.myshopping.app.AppTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/ejb-eshopping-client.iml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/ejb-eshopping-client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/pom.xml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/allclasses-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/allclasses-noframe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/com/myshopping/app/AdministrationClient.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/com/myshopping/app/AdministrationClient.html" />
@@ -83,18 +84,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/index-all.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/index-all.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/index.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/overview-tree.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/apidocs/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/surefire-reports/TEST-com.myshopping.app.AdministrationClientTest.xml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/surefire-reports/TEST-com.myshopping.app.AdministrationClientTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/surefire-reports/com.myshopping.app.AdministrationClientTest.txt" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/target/surefire-reports/com.myshopping.app.AdministrationClientTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Customer.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Customer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/allclasses-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/allclasses-noframe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Article.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Article.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Customer.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Customer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Order.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/Order.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Article.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Article.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Customer.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Customer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Order.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/class-use/Order.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-frame.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-frame.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-summary.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-summary.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-tree.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/com/myshopping/app/package-tree.html" />
@@ -106,6 +105,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/index.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/overview-tree.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/overview-tree.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/serialized-form.html" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/apidocs/serialized-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/surefire-reports/TEST-com.myshopping.app.AppTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/surefire-reports/com.myshopping.app.AppTest.txt" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/target/surefire-reports/com.myshopping.app.AppTest.txt" />
     </list>
@@ -159,7 +160,7 @@
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="774">
-              <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+              <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,7 +184,7 @@
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
+              <caret line="10" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,8 +216,11 @@
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-              <folding />
+              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+              <folding>
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -225,7 +229,7 @@
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -234,8 +238,8 @@
       <file leaf-file-name="AdministrationClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="401">
+              <caret line="41" column="55" lean-forward="false" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -268,7 +272,6 @@
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/pom.xml" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/pom.xml" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/pom.xml" />
-        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Order.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Customer.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java" />
@@ -276,6 +279,7 @@
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/OrderManager.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java" />
+        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" />
       </list>
     </option>
@@ -452,6 +456,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eshopping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejb-eshopping-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -505,6 +531,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ejb-eshopping-bean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eshopping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ejb-eshopping-bean" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1084,16 +1132,16 @@
       <option name="presentableId" value="Default" />
       <updated>1539894789691</updated>
       <workItem from="1539894792186" duration="8430000" />
-      <workItem from="1540125864721" duration="7533000" />
+      <workItem from="1540125864721" duration="7991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15963000" />
+    <option name="totallyTimeSpent" value="16421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-10" width="1366" height="778" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1118,7 +1166,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27389985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1359,7 +1407,7 @@
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
-          <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1379,7 +1427,7 @@
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1395,7 +1443,7 @@
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
+          <caret line="10" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1412,8 +1460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="401">
+          <caret line="41" column="55" lean-forward="false" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1421,8 +1469,11 @@
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
+          <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding>
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
