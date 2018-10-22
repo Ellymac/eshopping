@@ -8,4 +8,9 @@ import javax.ejb.Remote;
 @Remote
 public interface OrderManager {
 
+    String orderArticle(Customer customer, Article article);
+
+    Order findOrder(String id);
+
+    boolean isArticleAvailable(Article a);
 }
