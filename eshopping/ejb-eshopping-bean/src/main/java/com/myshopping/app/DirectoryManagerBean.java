@@ -35,7 +35,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public EUser findCustomer(String pseudo) {
-        Query q = em.createQuery("select cust from EUser c where cust.pseudo = :pseudo");
+        Query q = em.createQuery("select c from EUser c where c.pseudo = :pseudo");
         q.setParameter("pseudo", pseudo);
         return (EUser) q.getSingleResult();
     }
@@ -67,7 +67,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public Article findArticle(int id) {
-        Query q = em.createQuery("select art from Article a where a.id = :id");
+        Query q = em.createQuery("select a from Article a where a.id = :id");
         q.setParameter("id", id);
         return (Article) q.getSingleResult();
     }

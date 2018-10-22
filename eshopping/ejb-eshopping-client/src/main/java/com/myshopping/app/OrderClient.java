@@ -29,24 +29,35 @@ public final class OrderClient {
     }
 
     public static void orderInterface() {
-        String pseudo = input("Se connecter en tant que : ");
-        EUser eUser = dm.findCustomer(pseudo);
 
-        int articleId = 0;
-        while (true) {
-            String inputId = input("ID de l'article à commander : ");
-
-            try {
-                articleId = Integer.valueOf(inputId);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Veuillez entrer un nombre.");
-            }
+        // connexion avant de pouvoir commander
+        EUser eUser;
+        try {
+            String pseudo = input("Se connecter en tant que : ");
+            eUser = dm.findCustomer(pseudo);
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet utilisateur n'existe pas.");
+            return;
         }
 
-        Article article = dm.findArticle(articleId);
+        String pass = input("Mot de passe : ");
+        if(!eUser.getPassword().equals(pass)) {
+            System.out.println("Mot de passe incorrect");
+            return;
+        }
+
+        int articleId = inputInt("ID de l'article à commander : ");
+
+        Article article;
+        try {
+            article = dm.findArticle(articleId);
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet article n'existe pas.");
+            return;
+        }
+
         printArticle(article);
-        if (!confirm("Commander cet article ?")) {
+        if (!confirm("\nCommander cet article ?")) {
             return;
         }
 
@@ -56,6 +67,7 @@ public final class OrderClient {
         } else {
             System.out.println("L'article a été commandé.");
         }
+
     }
 
     public static void articleInterface() {

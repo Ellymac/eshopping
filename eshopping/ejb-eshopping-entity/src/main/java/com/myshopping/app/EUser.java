@@ -44,7 +44,7 @@ public class EUser implements Serializable {
     /**
      * the admin flag set to true if user is admin.
      */
-    private boolean isAdmin;
+    private boolean isAdminFlag;
 
     @OneToMany(mappedBy = "eUser")
     private List<OrderT> orderTS;
@@ -104,9 +104,9 @@ public class EUser implements Serializable {
         this.email = email;
     }
 
-    public boolean isAdmin() { return isAdmin; }
+    public boolean isAdminFlag() { return isAdminFlag; }
 
-    public void setAdmin(boolean admin) { isAdmin = admin; }
+    public void setisAdminFlag(boolean admin) { isAdminFlag = admin; }
 
     public List<OrderT> getOrderTS() { return orderTS; }
 

@@ -11,27 +11,6 @@ import static java.lang.Integer.max;
  */
 public class UtilsIHM {
 
-    public static int menu(String... choices) {
-        Scanner in = new Scanner(System.in);
-
-        System.out.println();
-        for (int i = 0; i < choices.length; i++) {
-            System.out.println(" " + String.valueOf(i + 1) + ") " + choices[i]);
-        }
-
-        while (true) {
-            System.out.print("> ");
-            System.out.flush();
-
-            int choice = in.nextInt();
-            if (0 < choice && choice <= choices.length) {
-                return choice;
-            } else {
-                System.out.println("Veuillez entrer un nombre entre 1 et " + String.valueOf(choices.length));
-            }
-        }
-    }
-
     public static void printArticle(Article article) {
         List<Article> articleList = new ArrayList<>();
         articleList.add(article);
@@ -40,6 +19,10 @@ public class UtilsIHM {
 
     public static void printArticleList(List<Article> articles) {
         int numColumns = 4;
+        String idColumnName = "ID";
+        String descriptionColumnName = "DESCRIPTION";
+        String categoryColumnName = "CATEGORY";
+        String availableColumnName = "AVAILABLE";
 
         System.out.println();
         if (articles.size() == 0) {
@@ -49,17 +32,17 @@ public class UtilsIHM {
         }
 
         // Calcule la taille des colonnes
-        int idColumnSize = max(5, "ID".length());
-        int descriptionColumnSize = "DESCRIPTION".length();
-        int categoryColumnSize = "CATEGORY".length();
-        int availableColumnSize = max(5, "AVAILABLE".length());
+        int idColumnSize = max(5, idColumnName.length());
+        int descriptionColumnSize = descriptionColumnName.length();
+        int categoryColumnSize = categoryColumnName.length();
+        int availableColumnSize = max(5, availableColumnName.length());
         for (Article article : articles) {
             descriptionColumnSize = max(descriptionColumnSize, article.getDescription().length());
             categoryColumnSize = max(categoryColumnSize, article.getCategory().length());
         }
 
         // Affiche les en-têtes
-        System.out.println(" " + pad("ID", idColumnSize) + " | " + pad("DESCRIPTION", descriptionColumnSize) + " | " + pad("CATEGORY", categoryColumnSize) + " | " + pad(" AVAILABLE", availableColumnSize));
+        System.out.println(" " + pad(idColumnName, idColumnSize) + " | " + pad(descriptionColumnName, descriptionColumnSize) + " | " + pad(categoryColumnName, categoryColumnSize) + " | " + pad(availableColumnName, availableColumnSize));
         System.out.println(new String(new char[idColumnSize + descriptionColumnSize + categoryColumnSize + availableColumnSize + numColumns * 3 - 1]).replace("\0", "-"));
 
         // Affiche le contenu
@@ -77,6 +60,38 @@ public class UtilsIHM {
         return new String(new char[size - s.length()]).replace("\0", " ") + s;
     }
 
+    public static int menu(String... choices) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println();
+        for (int i = 0; i < choices.length; i++) {
+            System.out.println(" " + String.valueOf(i + 1) + ") " + choices[i]);
+        }
+
+        while (true) {
+            int choice = inputInt(" > ");
+            if (0 < choice && choice <= choices.length) {
+                return choice;
+            } else {
+                System.out.println("Veuillez entrer un nombre entre 1 et " + String.valueOf(choices.length));
+            }
+        }
+    }
+
+    public static boolean authenticate() {
+        /*if (isAuthenticated) {
+            return true;
+        }
+        String input = input("Mot de passe : ");
+        if (input.equals(PASSWORD)) {
+            isAuthenticated = true;
+            return true;
+        } else {
+            return false;
+        }*/
+        return false;
+    }
+
     public static boolean confirm(String prompt) {
         String in = input(prompt + " [O/n] ");
         return in.equals("O") || in.equals("o") || in.equals("");
@@ -87,5 +102,21 @@ public class UtilsIHM {
         System.out.print(prompt);
         System.out.flush();
         return in.next().trim();
+    }
+
+    public static int inputInt(String prompt) {
+        int res = 0;
+        while (true) {
+            String inputId = input(prompt);
+
+            try {
+                res = Integer.valueOf(inputId);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Veullez entrer un nombre.");
+            }
+        }
+
+        return res;
     }
 }

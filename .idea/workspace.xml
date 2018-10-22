@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cf8d684-0ab2-454b-bce3-5a5f160a1772" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/MainClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Customer.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/OrderManager.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/OrderManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java" afterPath="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/target/" />
     <ignored path="$PROJECT_DIR$/eshopping/ejb-eshopping-api/target/" />
@@ -43,8 +38,8 @@
       <file leaf-file-name="EUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="112" column="74" lean-forward="false" selection-start-line="112" selection-start-column="74" selection-end-line="112" selection-end-column="74" />
+            <state relative-caret-position="-625">
+              <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,8 +50,8 @@
       <file leaf-file-name="DirectoryManagerBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+            <state relative-caret-position="73">
+              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,11 +59,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java">
+      <file leaf-file-name="OrderClient.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state relative-caret-position="325">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/MainClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,10 +95,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="OrderT.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderManagerBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
+            <state relative-caret-position="-121">
               <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,47 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdministrationClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/MainClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="599">
+              <caret line="121" column="5" lean-forward="false" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,11 +132,21 @@
       <file leaf-file-name="UtilsIHM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="300">
+              <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DirectoryManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,10 +185,10 @@
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/OrderManager.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java" />
-        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java" />
-        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java" />
-        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/MainClient.java" />
+        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java" />
+        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java" />
+        <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java" />
         <option value="$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java" />
       </list>
@@ -982,12 +975,12 @@
       <updated>1539894789691</updated>
       <workItem from="1539894792186" duration="8430000" />
       <workItem from="1540125864721" duration="7991000" />
-      <workItem from="1540224573784" duration="3702000" />
+      <workItem from="1540224573784" duration="7168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20123000" />
+    <option name="totallyTimeSpent" value="23589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-10" width="1366" height="778" extended-state="6" />
@@ -1017,7 +1010,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31031868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21927163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1292,10 +1285,30 @@
     <entry file="file://$PROJECT_DIR$/eshopping/derby.log" />
     <entry file="file://$PROJECT_DIR$/derby.log" />
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Order.java" />
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java">
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state relative-caret-position="401">
+          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-625">
+          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1308,18 +1321,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/OrderT.java">
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/EUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="112" column="74" lean-forward="false" selection-start-line="112" selection-start-column="74" selection-end-line="112" selection-end-column="74" />
+        <state relative-caret-position="-121">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1328,48 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/UtilsIHM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-entity/src/main/java/com/myshopping/app/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/OrderManagerBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="91" column="21" lean-forward="false" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1378,8 +1343,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/MainClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="338">
+          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-api/src/main/java/com/myshopping/app/DirectoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-bean/src/main/java/com/myshopping/app/DirectoryManagerBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/AdministrationClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="121" column="5" lean-forward="false" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1388,8 +1381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eshopping/ejb-eshopping-client/src/main/java/com/myshopping/app/OrderClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="325">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#529#530#0" expanded="true" />
