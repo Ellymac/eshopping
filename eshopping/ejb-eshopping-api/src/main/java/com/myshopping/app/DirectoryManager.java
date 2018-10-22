@@ -13,7 +13,7 @@ public interface DirectoryManager {
      *
      * @return the string "OK" if there is no problem.
      */
-    String insertCustomer(String pseudo, String fname, String lname, String addr, String email);
+    String insertCustomer(String pseudo, String pass, String fname, String lname, String addr, String email, boolean admin);
 
     /**
      * Find EUser.
@@ -34,14 +34,14 @@ public interface DirectoryManager {
      *
      * @return the string "OK" if there is no problem.
      */
-    String updateCustomer(String pseudo, String fname, String lname, String addr, String email);
+    String updateCustomer(String pseudo, String pass, String fname, String lname, String addr, String email, boolean admin);
 
     /**
      * Insert Article.
      *
      * @return the string "OK" if there is no problem.
      */
-    String insertArticle(int id, String desc, String cat);
+    String insertArticle(int id, String desc, String cat, int nbAvailable);
 
     /**
      * Find Article.
@@ -64,7 +64,7 @@ public interface DirectoryManager {
      *
      * @return the string "OK" if there is no problem.
      */
-    String updateArticle(int id, String desc, String cat);
+    String updateArticle(int id, String desc, String cat, int nb);
 
     /**
      * Check Article availability

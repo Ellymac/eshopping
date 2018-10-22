@@ -1,6 +1,6 @@
 package com.myshopping.app;
 
-import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import java.util.List;
 
 import static com.myshopping.app.UtilsIHM.*;
@@ -16,26 +16,31 @@ public final class OrderClient {
     private OrderClient() {
     }
 
-    private static DirectoryManager dm = null;
-    private static OrderManager om = null;
-
     /**
      * the main of the client.
      *
      * @param args
      */
     public static void main( String[] args ) {
-        System.out.println("I am Order Client");
     }
 
     public static void orderInterface() {
-
+        DirectoryManager dm = null;
+        OrderManager om = null;
+        try {
+            dm = BeanManager.getDm();
+            om = BeanManager.getOm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+        
         // connexion avant de pouvoir commander
         EUser eUser;
-        try {
-            String pseudo = input("Se connecter en tant que : ");
-            eUser = dm.findCustomer(pseudo);
-        } catch (javax.ejb.EJBException e) {
+        String pseudo = input("Se connecter en tant que : ");
+        eUser = dm.findCustomer(pseudo);
+        if(eUser == null) {
             System.out.println("Cet utilisateur n'existe pas.");
             return;
         }
@@ -71,6 +76,15 @@ public final class OrderClient {
     }
 
     public static void articleInterface() {
+        DirectoryManager dm = null;
+        try {
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+
         List<Article> articles = dm.allArticles();
         printArticleList(articles);
     }

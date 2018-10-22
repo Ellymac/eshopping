@@ -30,7 +30,7 @@ public class OrderManagerBean implements OrderManager {
         em.persist(orderT);
 
         article.setNbAvailable(nbAvailable - 1);
-        em.persist(article);
+        em.merge(article);
 
         return "OK";
     }

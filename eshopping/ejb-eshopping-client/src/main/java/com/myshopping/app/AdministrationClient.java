@@ -12,10 +12,6 @@ import static com.myshopping.app.UtilsIHM.*;
  */
 public final class AdministrationClient
 {
-    private static DirectoryManager dm = null;
-
-    private static boolean isAuthenticated = false;
-
     /**
      * utility class with no instance.
      */
@@ -29,20 +25,35 @@ public final class AdministrationClient
      */
     public static void main( String[] args )
     {
+    }
+
+    public static void adminInterface() {
+        DirectoryManager dm = null;
         try {
-            InitialContext ic = new InitialContext();
-            dm = (DirectoryManager) ic.lookup("com.myshopping.app.DirectoryManager");
-        } catch (NamingException e) {
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
             e.printStackTrace();
             return;
         }
 
-        adminInterface();
-    }
+        // connexion avant de pouvoir commander
+        EUser eUser;
+        String pseudo = input("Se connecter en tant que : ");
+        eUser = dm.findCustomer(pseudo);
+        if(eUser == null) {
+            System.out.println("Cet utilisateur n'existe pas.");
+            return;
+        }
 
-    public static void adminInterface() {
-        if (!authenticate()) {
-            System.out.println("Mauvais mot de passe");
+        String pass = input("Mot de passe : ");
+        if(!eUser.getPassword().equals(pass)) {
+            System.out.println("Mot de passe incorrect");
+            return;
+        }
+        else if(!eUser.isAdminFlag())
+        {
+            System.out.print("Vous n'avez pas les droits suffisants.");
             return;
         }
 
@@ -74,6 +85,15 @@ public final class AdministrationClient
     }
 
     private static void delArticleInterface() {
+        DirectoryManager dm = null;
+        try {
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+
         int articleId = inputInt("L'ID de l'article à supprimer : ");
         try {
             dm.deleteArticle(dm.findArticle(articleId));
@@ -84,12 +104,22 @@ public final class AdministrationClient
     }
 
     private static void addArticleInterface() {
+        DirectoryManager dm = null;
+        try {
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+
         System.out.println("\nNouvel article");
         int id = inputInt(" > ID : ");
         String description = input(" > Description : ");
         String category = input(" > Catégorie : ");
+        int nb = inputInt("> Nombre d'articles disponibles : ");
         try {
-            dm.insertArticle(id, description, category);
+            dm.insertArticle(id, description, category, nb);
             System.out.println("L'article a été ajouté.");
         } catch (javax.ejb.EJBException e) {
             System.out.println("L'article n'a pas pu être ajouté (essayez avec une autre ID).");
@@ -97,35 +127,51 @@ public final class AdministrationClient
     }
 
     private static void delUserInterface() {
-        String pseudo = input("Le pseudo de l'utilisateur à supprimer : ");
+        DirectoryManager dm = null;
         try {
-            dm.deleteCustomer(dm.findCustomer(pseudo));
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+
+        String pseudo = input("Le pseudo de l'utilisateur à supprimer : ");
+        EUser userToDelete = dm.findCustomer(pseudo);
+        if(userToDelete != null) {
+            dm.deleteCustomer(userToDelete);
             System.out.println("L'utilisateur a été supprimé.");
-        } catch (javax.ejb.EJBException e) {
-            System.out.println("Cet utilisateur n'existe pas.");
+        }
+        else
+        {
+            System.out.println("L'utilisateur n'existe pas.");
+            return;
         }
     }
 
     private static void addUserInterface() {
+        DirectoryManager dm = null;
+        try {
+            dm = BeanManager.getDm();
+        } catch(NamingException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+        
         System.out.println("\nNouvel utilisateur");
         String pseudo = input(" > Pseudo : ");
+        String mdp = input(" > Mot de passe : ");
         String firstName = input (" > Prénom : ");
         String lastName = input (" > Nom : ");
         String address = input(" > Adresse : ");
         String email = input (" > Courriel : ");
+        boolean admin = input("> Admin (y/n) : ").equals("y") ? true : false;
         try {
-            dm.insertCustomer(pseudo, firstName, lastName, address, email);
+            dm.insertCustomer(pseudo, mdp, firstName, lastName, address, email, admin);
             System.out.println("L'utilisateur a été ajouté.");
         } catch (javax.ejb.EJBException e) {
             System.out.println("L'utilisateur n'a pas pu être ajouté (le pseudo est peut-être déjà pris).");
         }
-    }
-
-    public static boolean authenticate() {
-        if (isAuthenticated) {
-            return true;
-        }
-        String input = input("Mot de passe : ");
-        return true;
     }
 }

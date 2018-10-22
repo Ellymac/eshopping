@@ -1,5 +1,6 @@
 package com.myshopping.app;
 
+import javax.ejb.EJBException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,14 +21,16 @@ public class DirectoryManagerBean implements DirectoryManager {
 
 
     @Override
-    public String insertCustomer(String pseudo, String fname, String lname, String addr, String email) {
+    public String insertCustomer(String pseudo, String pass, String fname, String lname, String addr, String email, boolean admin) {
         // create the customer
         EUser c = new EUser();
         c.setPseudo(pseudo);
+        c.setPassword(pass);
         c.setFirstName(fname);
         c.setLastName(lname);
         c.setAddress(addr);
         c.setEmail(email);
+        c.setisAdminFlag(admin);
         // persist the customer
         em.persist(c);
         return "OK";
@@ -35,9 +38,16 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public EUser findCustomer(String pseudo) {
-        Query q = em.createQuery("select c from EUser c where c.pseudo = :pseudo");
-        q.setParameter("pseudo", pseudo);
-        return (EUser) q.getSingleResult();
+        EUser u = null;
+        try {
+            Query q = em.createQuery("select c from EUser c where c.pseudo = :pseudo");
+            q.setParameter("pseudo", pseudo);
+            u = (EUser) q.getSingleResult();
+        }  catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return u;
     }
 
     @Override
@@ -49,17 +59,27 @@ public class DirectoryManagerBean implements DirectoryManager {
     }
 
     @Override
-    public String updateCustomer(String pseudo, String fname, String lname, String addr, String email) {
-        return null;
+    public String updateCustomer(String pseudo, String pass, String fname, String lname, String addr, String email, boolean isAdmin) {
+        EUser u = new EUser();
+        u.setPseudo(pseudo);
+        u.setPassword(pass);
+        u.setFirstName(fname);
+        u.setLastName(lname);
+        u.setAddress(addr);
+        u.setEmail(email);
+        u.setisAdminFlag(isAdmin);
+        em.merge(u);
+        return "OK";
     }
 
     @Override
-    public String insertArticle(int id, String desc, String cat) {
+    public String insertArticle(int id, String desc, String cat, int nbAvailable) {
         // create the article
         Article a = new Article();
         a.setId(id);
         a.setDescription(desc);
         a.setCategory(cat);
+        a.setNbAvailable(nbAvailable);
         // persist article
         em.persist(a);
         return "OK";
@@ -74,7 +94,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     //@Override
     public List<Article> allArticles() {
-        return em.createQuery("FROM Article", Article.class).getResultList();
+        return em.createQuery("FROM Article a", Article.class).getResultList();
     }
 
     @Override
@@ -86,8 +106,14 @@ public class DirectoryManagerBean implements DirectoryManager {
     }
 
     @Override
-    public String updateArticle(int id, String desc, String cat) {
-        return null;
+    public String updateArticle(int id, String desc, String cat, int nb) {
+        Article a = new Article();
+        a.setDescription(desc);
+        a.setId(id);
+        a.setCategory(cat);
+        a.setNbAvailable(nb);
+        em.merge(a);
+        return "OK";
     }
 
     @Override

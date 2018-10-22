@@ -1,5 +1,6 @@
 package com.myshopping.app;
 
+import javax.enterprise.inject.spi.Bean;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -8,7 +9,7 @@ import static com.myshopping.app.OrderClient.*;
 import static com.myshopping.app.UtilsIHM.*;
 
 /**
- * Maint client with interactive console app.
+ * Main client with interactive console app.
  */
 public class MainClient {
     /**
@@ -17,27 +18,21 @@ public class MainClient {
     private MainClient() {
     }
 
-    private static DirectoryManager dm = null;
-    private static OrderManager om = null;
-
-    private static boolean isAuthenticated = false;
-
     /**
      * the main of the client.
      *
      * @param args
      */
     public static void main( String[] args ) {
+        int choice = menu("Voir les articles", "Commander", "[ADMIN] Ajouter des utilisateurs et des articles");
+
+        // create default admin account to access admin part of the app
         try {
-            InitialContext ic = new InitialContext();
-            dm = (DirectoryManager) ic.lookup("com.myshopping.app.DirectoryManager");
-            om = (OrderManager) ic.lookup("com.myshopping.app.OrderManager");
+            if(BeanManager.getDm().findCustomer("admin") == null)
+                BeanManager.getDm().insertCustomer("admin", "admin", "John", "Doe", "nowhere New York", "john.doe@unknown.do", true);
         } catch (NamingException e) {
             e.printStackTrace();
-            return;
         }
-
-        int choice = menu("Voir les articles", "Commander", "[ADMIN] Ajouter des utilisateurs et des articles");
 
         switch (choice) {
             case 1:

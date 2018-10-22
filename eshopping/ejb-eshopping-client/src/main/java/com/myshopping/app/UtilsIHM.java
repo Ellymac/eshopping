@@ -78,20 +78,6 @@ public class UtilsIHM {
         }
     }
 
-    public static boolean authenticate() {
-        /*if (isAuthenticated) {
-            return true;
-        }
-        String input = input("Mot de passe : ");
-        if (input.equals(PASSWORD)) {
-            isAuthenticated = true;
-            return true;
-        } else {
-            return false;
-        }*/
-        return false;
-    }
-
     public static boolean confirm(String prompt) {
         String in = input(prompt + " [O/n] ");
         return in.equals("O") || in.equals("o") || in.equals("");
