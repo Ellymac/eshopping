@@ -86,9 +86,6 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public boolean isArticleAvailable(Article a) {
-        if(a.getNbAvailable() > 0)
-            return true;
-        else
-            return false;
+        return a.getNbAvailable() > 0;
     }
 }
