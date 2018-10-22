@@ -23,11 +23,11 @@ public class OrderManagerBean implements OrderManager {
             return "NOT OK";
         }
 
-        Order order = new Order();
-        order.setArticle(article);
-        order.setCustomer(customer);
-        order.setBuyedAt(new Date());
-        em.persist(order);
+        OrderT orderT = new OrderT();
+        orderT.setArticle(article);
+        orderT.setCustomer(customer);
+        orderT.setBuyedAt(new Date());
+        em.persist(orderT);
 
         article.setNbAvailable(nbAvailable - 1);
         em.persist(article);
@@ -36,8 +36,8 @@ public class OrderManagerBean implements OrderManager {
     }
 
     @Override
-    public Order findOrder(String id) {
-        return em.find(Order.class, id);
+    public OrderT findOrder(String id) {
+        return em.find(OrderT.class, id);
     }
 
     @Override

@@ -3,10 +3,11 @@ package com.myshopping.app;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-public class Order implements Serializable {
+public class OrderT implements Serializable {
+    @Id
+    @GeneratedValue
     private String id;
 
     @OneToOne

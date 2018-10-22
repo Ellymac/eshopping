@@ -19,6 +19,7 @@ public class Customer implements Serializable {
     /**
      * the unique pseudonym of the customer.
      */
+    @Id
     private String pseudo;
     /**
      * the first name of the customer.
@@ -37,15 +38,14 @@ public class Customer implements Serializable {
      */
     private String email;
 
-    @OneToMany(mappedBy = "order")
-    private List<Order> orders;
+    @OneToMany(mappedBy = "customer")
+    private List<OrderT> orderTS;
 
     /**
      * gets the unique pseudonym.
      *
      * @return the pseudonym.
      */
-    @Id
     public String getPseudo() {
         return pseudo;
     }

@@ -10,7 +10,7 @@ public interface OrderManager {
 
     String orderArticle(Customer customer, Article article);
 
-    Order findOrder(String id);
+    OrderT findOrder(String id);
 
     boolean isArticleAvailable(Article a);
 }
