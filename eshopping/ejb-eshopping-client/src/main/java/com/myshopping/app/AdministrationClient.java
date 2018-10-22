@@ -14,8 +14,6 @@ public final class AdministrationClient
 {
     private static DirectoryManager dm = null;
 
-    private static boolean isAuthenticated = false;
-
     /**
      * utility class with no instance.
      */
@@ -41,18 +39,14 @@ public final class AdministrationClient
     }
 
     public static void adminInterface() {
-        if (!authenticate()) {
-            System.out.println("Mauvais mot de passe");
-            return;
-        }
-
         boolean stop = false;
         while (!stop) {
             int choice = menu(
                     "Ajouter un utilisateur",
                     "Supprimer un utilisateur",
                     "Ajouter un article",
-                    "Supprimer un article");
+                    "Supprimer un article",
+                    "Menu principal");
             switch (choice) {
                 case 1:
                     addUserInterface();
@@ -119,13 +113,5 @@ public final class AdministrationClient
         } catch (javax.ejb.EJBException e) {
             System.out.println("L'utilisateur n'a pas pu être ajouté (le pseudo est peut-être déjà pris).");
         }
-    }
-
-    public static boolean authenticate() {
-        if (isAuthenticated) {
-            return true;
-        }
-        String input = input("Mot de passe : ");
-        return true;
     }
 }

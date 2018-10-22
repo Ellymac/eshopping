@@ -37,18 +37,28 @@ public class MainClient {
             return;
         }
 
-        int choice = menu("Voir les articles", "Commander", "[ADMIN] Ajouter des utilisateurs et des articles");
+        boolean run = true;
+        while (run) {
+            int choice = menu(
+                    "Voir les articles",
+                    "Commander",
+                    "[ADMIN] Ajouter des utilisateurs et des articles",
+                    "Quitter");
 
-        switch (choice) {
-            case 1:
-                articleInterface();
-                break;
-            case 2:
-                orderInterface();
-                break;
-            case 3:
-                adminInterface();
-                break;
+            switch (choice) {
+                case 1:
+                    articleInterface();
+                    break;
+                case 2:
+                    orderInterface();
+                    break;
+                case 3:
+                    adminInterface();
+                    break;
+                case 4:
+                    run = false;
+                    break;
+            }
         }
     }
 }
