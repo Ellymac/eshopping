@@ -1,8 +1,10 @@
 package com.myshopping.app;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * The customer entity.
@@ -34,6 +36,9 @@ public class Customer implements Serializable {
      * the email address of the customer.
      */
     private String email;
+
+    @OneToMany(mappedBy = "order")
+    private List<Order> orders;
 
     /**
      * gets the unique pseudonym.

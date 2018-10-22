@@ -10,9 +10,11 @@ public class Order implements Serializable {
     private String id;
 
     @OneToOne
+    @JoinColumn(name = "ARTICLE_ID")
     private Article article;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "CUSTOMER_ID")
     private Customer customer;
 
     private Date buyedAt;
