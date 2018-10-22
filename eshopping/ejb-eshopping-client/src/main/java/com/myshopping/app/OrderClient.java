@@ -2,6 +2,10 @@ package com.myshopping.app;
 
 import javax.naming.NamingException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import static com.myshopping.app.UtilsIHM.*;
 
@@ -15,7 +19,20 @@ public final class OrderClient {
      */
     private OrderClient() {
     }
+    private static ExecutorService executor
+            = Executors.newSingleThreadExecutor();
 
+    /**
+     *  Réapprovisionnement d'articles lorsqu'ils ne sont plus disponibles.
+     * @param input : nb de nouveaux exemplaires
+     * @return le nb d'exemplaires en stock
+     */
+    public static Future<Integer> newDelivery(Integer input) {
+        return executor.submit(() -> {
+            Thread.sleep(1000);
+            return input;
+        });
+    }
     /**
      * the main of the client.
      *
@@ -69,6 +86,28 @@ public final class OrderClient {
         String result = om.orderArticle(eUser, article);
         if (result.equals("NOT OK")) {
             System.out.println("L'article n'est pas disponible.");
+
+            // livraison 10 nouveaux exmplaires
+            Future<Integer> future = newDelivery(10);
+
+            while(!future.isDone()) {
+                System.out.println("En cours de livraison......");
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            try {
+                dm.updateArticle(article.getId(), article.getDescription(), article.getCategory(), future.get());
+                System.out.println("L'article est en stock ! (" + future.get() + " exemplaires)");
+                return;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         } else {
             System.out.println("L'article a été commandé.");
         }
