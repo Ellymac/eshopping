@@ -11,7 +11,7 @@
 
 \pagestyle{plain}
 \title{Micro-projet}
-\author{Hubert Hirtz et Camille Schnell}
+\author{Hubert \bsc{Hirtz} \and Camille \bsc{Schnell}}
 \date{22 octobre 2018}
 \begin{document}
 \maketitle
@@ -23,20 +23,67 @@
   Nous allons dans un premier présenter nos choix architecturaux, et indiquer quels designs patterns nous avons mis en place. Nous expliquerons ensuite la solution globale du projet, ainsi que la gestion des données. Nous fournirons enfin un manuel utilisateur de notre application, et nous finirons par les difficultés que nous avons pu rencontrer lors du déroulement du micro-projet.
 \newpage
 \section{Architecture et design patterns}
-\newpage
+
+Le projet a été construit en gardant à l'esprit la séparation des préoccupations, afin de garder un code modulaire.
+Ainsi, le code est séparé sous les quatres modules décrits dans la section suivante.
+
+Une version dérivée du pattern \textit{Singleton} est utilisée dans \textbf{BeanManager} pour initialiser les deux beans chez les clients, et les réutiliser.
+
 \section{Solution et gestion des données}
-\newpage
+
+La solution est composée par quatre modules :
+
+\begin{itemize}
+    \item \texttt{ejb-eshopping-api}, qui contient les interfaces utilisées pour communiquer avec les beans, et ainsi modifier la base de données.
+        
+        L'API est divisée en deux interfaces. Le \textbf{DirectoryManager} s'occupe des articles et des clients, tandis que l'\textbf{OrderManager} s'occupe des commandes.
+
+    \item \texttt{ejb-eshopping-bean}, qui contient les implémentations de ces interfaces. Vous trouverez ici le code qui accède à la base de données avec la JPA.
+
+    \item \texttt{ejb-eshopping-entity}, qui contient les modèles de données avec les classes \textbf{Article}, \textbf{EUser} et \textbf{OrderT}.
+
+    \item \texttt{ejb-eshopping-client}, qui contient le code qui accède aux beans, à savoir l'interface utilisateur et les scénarios.
+\end{itemize}
+
 \section{Manuel d'utilisation}
     \subsection{Lancement du script de démonstration}
-    Pour lancer la démonstration, ...
+    Une interface est mise à disposition pour ajouter et supprimer des utilisateurs, des articles.
+    Elle permet aussi de commander un article sous le nom d'un utilisateur, et d'afficher tous les articles.
+
+    Pour lancer l'interface, il faut compiler le projet avec
+
+    \texttt{mvn clean install}
+
+    Puis lancer le domaine et la base de données glassfish. L'interface se lance ensuite avec
+
+    \texttt{./interface.sh}
+
+    Vous pouvez ensuite suivre les instructions affichées dans la console.
+
     \subsection{Scénarios clients prédéfinis}
-    Nous avons implémenté deux scénarios prédéfinis afin de montrer le fonctionnement de notre application.
+    En plus de l'interface présentée ci-dessus, un scénario est mis à disposition. Pour l'exécuter, il suffit d'entrer la commande suivante :
+
+    \texttt{./scenario.sh}
+
+    Ces scénarios permettent de tester toutes les méthodes des beans de l'application.
+
     \subsubsection{Premier scénario}
     Ce premier scénario permet de ...
     \subsubsection{Deuxième scénario}
     Ce deuxième scénario a pour objectif de tester ...
 \newpage
 \section{Difficultés rencontrées}
+
+La première difficulté à été de mettre en place l'environement de développement.
+La configuration est en effet longue et pénible pour un projet de cette ampleure-là.
+Bien sûr, dans de grands projets d'entreprise, cette configuration prend tout son sens, en ce qu'elle permet de faire marcher de nombreux compsants travaillant ensemble.
+
+La seconde a été la modularité du projet.
+Cela peut paraitre surprenant, sachant que c'est un point qui a été abordé positivement dans la description de l'architecture, mais cette modularité nous a ralenti dans le développement.
+Ce projet étant un projet d'apprentissage, nous l'avons abordé sans faire de spécification (p. ex. comme en cycle en V).
+Les interfaces des modules évoluaient donc sans cesse, le développement a été ainsi ralenti.
+
+D'autres problèmes mineurs ont été rencontrés, comme l'annotation \texttt{@GeneratedValue} que l'on a pas réussi à faire marcher, mais nous avons réussi à passer outre ces difficultés.
 
 \newpage
 \section{Conclusion}
