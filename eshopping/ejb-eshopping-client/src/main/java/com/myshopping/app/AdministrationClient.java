@@ -37,6 +37,7 @@ public final class AdministrationClient
      */
     public static void main( String[] args )
     {
+        System.out.println("\nLà c'est le moment où vous pouvez aller prendre un café...\n");
         try {
             InitialContext ic = new InitialContext();
             dm = (DirectoryManager) ic.lookup("com.myshopping.app.DirectoryManager");
@@ -46,18 +47,28 @@ public final class AdministrationClient
             return;
         }
 
-        int choice = menu("Voir les articles", "Commander", "[ADMIN] Ajouter des utilisateurs et des articles");
+        boolean stop = false;
+        while (!stop) {
+            int choice = menu(
+                    "Voir les articles",
+                    "Commander",
+                    "[ADMIN] Ajouter des utilisateurs et des articles",
+                    "Quitter");
 
-        switch (choice) {
-            case 1:
-                articleInterface();
-                break;
-            case 2:
-                orderInterface();
-                break;
-            case 3:
-                adminInterface();
-                break;
+            switch (choice) {
+                case 1:
+                    articleInterface();
+                    break;
+                case 2:
+                    orderInterface();
+                    break;
+                case 3:
+                    adminInterface();
+                    break;
+                case 4:
+                    stop = true;
+                    break;
+            }
         }
     }
 
@@ -67,32 +78,105 @@ public final class AdministrationClient
             return;
         }
 
-        int choice = menu(
-                "Ajouter un utilisateur",
-                "Supprimer un utilisateur",
-                "Ajouter un article",
-                "Supprimer un article");
+        boolean stop = false;
+        while (!stop) {
+            int choice = menu(
+                    "Ajouter un utilisateur",
+                    "Supprimer un utilisateur",
+                    "Ajouter un article",
+                    "Supprimer un article",
+                    "Menu principal");
+
+            switch (choice) {
+                case 1:
+                    addUserInterface();
+                    break;
+                case 2:
+                    delUserInterface();
+                    break;
+                case 3:
+                    addArticleInterface();
+                    break;
+                case 4:
+                    delArticleInterface();
+                    break;
+                case 5:
+                    stop = true;
+                    break;
+            }
+        }
+    }
+
+    private static void delArticleInterface() {
+        int articleId = inputInt("L'ID de l'article à supprimer : ");
+        try {
+            dm.deleteArticle(dm.findArticle(articleId));
+            System.out.println("L'article a été supprimé.");
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet article n'existe pas.");
+        }
+    }
+
+    private static void addArticleInterface() {
+        System.out.println("\nNouvel article");
+        int id = inputInt(" > ID : ");
+        String description = input(" > Description : ");
+        String category = input(" > Catégorie : ");
+        try {
+            dm.insertArticle(id, description, category);
+            System.out.println("L'article a été ajouté.");
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("L'article n'a pas pu être ajouté (essayez avec une autre ID).");
+        }
+    }
+
+    private static void delUserInterface() {
+        String pseudo = input("Le pseudo de l'utilisateur à supprimer : ");
+        try {
+            dm.deleteCustomer(dm.findCustomer(pseudo));
+            System.out.println("L'utilisateur a été supprimé.");
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet utilisateur n'existe pas.");
+        }
+    }
+
+    private static void addUserInterface() {
+        System.out.println("\nNouvel utilisateur");
+        String pseudo = input(" > Pseudo : ");
+        String firstName = input (" > Prénom : ");
+        String lastName = input (" > Nom : ");
+        String address = input(" > Adresse : ");
+        String email = input (" > Courriel : ");
+        try {
+            dm.insertCustomer(pseudo, firstName, lastName, address, email);
+            System.out.println("L'utilisateur a été ajouté.");
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("L'utilisateur n'a pas pu être ajouté (le pseudo est peut-être déjà pris).");
+        }
     }
 
     private static void orderInterface() {
-        String pseudo = input("Se connecter en tant que : ");
-        Customer customer = dm.findCustomer(pseudo);
-
-        int articleId = 0;
-        while (true) {
-            String inputId = input("ID de l'article à commander : ");
-
-            try {
-                articleId = Integer.valueOf(inputId);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Veullez entrer un nombre.");
-            }
+        Customer customer;
+        try {
+            String pseudo = input("Se connecter en tant que : ");
+            customer = dm.findCustomer(pseudo);
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet utilisateur n'existe pas.");
+            return;
         }
 
-        Article article = dm.findArticle(articleId);
+        int articleId = inputInt("ID de l'article à commander : ");
+
+        Article article;
+        try {
+            article = dm.findArticle(articleId);
+        } catch (javax.ejb.EJBException e) {
+            System.out.println("Cet article n'existe pas.");
+            return;
+        }
+
         printArticle(article);
-        if (!confirm("Commander cet article ?")) {
+        if (!confirm("\nCommander cet article ?")) {
             return;
         }
 
@@ -117,6 +201,10 @@ public final class AdministrationClient
 
     private static void printArticleList(List<Article> articles) {
         int numColumns = 4;
+        String idColumnName = "ID";
+        String descriptionColumnName = "DESCRIPTION";
+        String categoryColumnName = "CATEGORY";
+        String availableColumnName = "AVAILABLE";
 
         System.out.println();
         if (articles.size() == 0) {
@@ -126,17 +214,17 @@ public final class AdministrationClient
         }
 
         // Calcule la taille des colonnes
-        int idColumnSize = max(5, "ID".length());
-        int descriptionColumnSize = "DESCRIPTION".length();
-        int categoryColumnSize = "CATEGORY".length();
-        int availableColumnSize = max(5, "AVAILABLE".length());
+        int idColumnSize = max(5, idColumnName.length());
+        int descriptionColumnSize = descriptionColumnName.length();
+        int categoryColumnSize = categoryColumnName.length();
+        int availableColumnSize = max(5, availableColumnName.length());
         for (Article article : articles) {
             descriptionColumnSize = max(descriptionColumnSize, article.getDescription().length());
             categoryColumnSize = max(categoryColumnSize, article.getCategory().length());
         }
 
         // Affiche les en-têtes
-        System.out.println(" " + pad("ID", idColumnSize) + " | " + pad("DESCRIPTION", descriptionColumnSize) + " | " + pad("CATEGORY", categoryColumnSize) + " | " + pad(" AVAILABLE", availableColumnSize));
+        System.out.println(" " + pad(idColumnName, idColumnSize) + " | " + pad(descriptionColumnName, descriptionColumnSize) + " | " + pad(categoryColumnName, categoryColumnSize) + " | " + pad(availableColumnName, availableColumnSize));
         System.out.println(new String(new char[idColumnSize + descriptionColumnSize + categoryColumnSize + availableColumnSize + numColumns * 3 - 1]).replace("\0", "-"));
 
         // Affiche le contenu
@@ -163,10 +251,7 @@ public final class AdministrationClient
         }
 
         while (true) {
-            System.out.print("> ");
-            System.out.flush();
-
-            int choice = in.nextInt();
+            int choice = inputInt(" > ");
             if (0 < choice && choice <= choices.length) {
                 return choice;
             } else {
@@ -180,7 +265,12 @@ public final class AdministrationClient
             return true;
         }
         String input = input("Mot de passe : ");
-        return input.equals(PASSWORD);
+        if (input.equals(PASSWORD)) {
+            isAuthenticated = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private static boolean confirm(String prompt) {
@@ -188,10 +278,26 @@ public final class AdministrationClient
         return in.equals("O") || in.equals("o") || in.equals("");
     }
 
+    private static int inputInt(String prompt) {
+        int res = 0;
+        while (true) {
+            String inputId = input(prompt);
+
+            try {
+                res = Integer.valueOf(inputId);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Veullez entrer un nombre.");
+            }
+        }
+
+        return res;
+    }
+
     private static String input(String prompt) {
         Scanner in = new Scanner(System.in);
         System.out.print(prompt);
         System.out.flush();
-        return in.next().trim();
+        return in.nextLine().trim();
     }
 }

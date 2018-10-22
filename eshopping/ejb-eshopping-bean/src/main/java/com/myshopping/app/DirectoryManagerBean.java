@@ -35,7 +35,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public Customer findCustomer(String pseudo) {
-        Query q = em.createQuery("select cust from Customer c where cust.pseudo = :pseudo");
+        Query q = em.createQuery("select c from Customer c where c.pseudo = :pseudo");
         q.setParameter("pseudo", pseudo);
         return (Customer) q.getSingleResult();
     }
@@ -50,6 +50,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public String updateCustomer(String pseudo, String fname, String lname, String addr, String email) {
+        // TODO
         return null;
     }
 
@@ -67,14 +68,14 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public Article findArticle(int id) {
-        Query q = em.createQuery("select art from Article a where art.id = :id");
+        Query q = em.createQuery("select a from Article a where a.id = :id");
         q.setParameter("id", id);
         return (Article) q.getSingleResult();
     }
 
     //@Override
     public List<Article> allArticles() {
-        return em.createQuery("FROM Article", Article.class).getResultList();
+        return em.createQuery("FROM Article a", Article.class).getResultList();
     }
 
     @Override
@@ -87,6 +88,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public String updateArticle(int id, String desc, String cat) {
+        // TODO
         return null;
     }
 
