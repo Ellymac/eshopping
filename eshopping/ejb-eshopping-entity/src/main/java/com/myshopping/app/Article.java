@@ -1,17 +1,16 @@
 package com.myshopping.app;
 
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * The article entity
 **/
 @Entity
 @Table(name = "ARTICLE")
-public class Article {
+public class Article implements Serializable {
     /**
      * the unique identifier.
      */
