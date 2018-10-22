@@ -16,7 +16,7 @@ public class OrderManagerBean implements OrderManager {
     private EntityManager em;
 
     @Override
-    public String orderArticle(Customer customer, Article article) {
+    public String orderArticle(EUser eUser, Article article) {
         int nbAvailable = article.getNbAvailable();
 
         if (nbAvailable == 0) {
@@ -25,7 +25,7 @@ public class OrderManagerBean implements OrderManager {
 
         OrderT orderT = new OrderT();
         orderT.setArticle(article);
-        orderT.setCustomer(customer);
+        orderT.seteUser(eUser);
         orderT.setBuyedAt(new Date());
         em.persist(orderT);
 

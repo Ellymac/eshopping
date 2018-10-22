@@ -9,28 +9,28 @@ import java.util.List;
 @Remote
 public interface DirectoryManager {
     /**
-     * Insert Customer.
+     * Insert EUser.
      *
      * @return the string "OK" if there is no problem.
      */
     String insertCustomer(String pseudo, String fname, String lname, String addr, String email);
 
     /**
-     * Find Customer.
+     * Find EUser.
      *
      * @return the customer or null if not found.
      */
-    Customer findCustomer(String pseudo);
+    EUser findCustomer(String pseudo);
 
     /**
-     * Delete Customer.
+     * Delete EUser.
      *
      * @return the string "OK" if there is no problem.
      */
-    String deleteCustomer(Customer cust);
+    String deleteCustomer(EUser cust);
 
     /**
-     * Update Customer.
+     * Update EUser.
      *
      * @return the string "OK" if there is no problem.
      */

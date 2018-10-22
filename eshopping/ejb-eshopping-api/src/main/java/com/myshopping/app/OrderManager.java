@@ -8,7 +8,7 @@ import javax.ejb.Remote;
 @Remote
 public interface OrderManager {
 
-    String orderArticle(Customer customer, Article article);
+    String orderArticle(EUser eUser, Article article);
 
     OrderT findOrder(String id);
 

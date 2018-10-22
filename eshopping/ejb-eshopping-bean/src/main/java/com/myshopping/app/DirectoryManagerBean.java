@@ -22,7 +22,7 @@ public class DirectoryManagerBean implements DirectoryManager {
     @Override
     public String insertCustomer(String pseudo, String fname, String lname, String addr, String email) {
         // create the customer
-        Customer c = new Customer();
+        EUser c = new EUser();
         c.setPseudo(pseudo);
         c.setFirstName(fname);
         c.setLastName(lname);
@@ -34,15 +34,15 @@ public class DirectoryManagerBean implements DirectoryManager {
     }
 
     @Override
-    public Customer findCustomer(String pseudo) {
-        Query q = em.createQuery("select cust from Customer c where cust.pseudo = :pseudo");
+    public EUser findCustomer(String pseudo) {
+        Query q = em.createQuery("select cust from EUser c where cust.pseudo = :pseudo");
         q.setParameter("pseudo", pseudo);
-        return (Customer) q.getSingleResult();
+        return (EUser) q.getSingleResult();
     }
 
     @Override
-    public String deleteCustomer(Customer cust) {
-        Customer c = em.merge(cust);
+    public String deleteCustomer(EUser cust) {
+        EUser c = em.merge(cust);
         // delete all records
         em.remove(c);
         return "OK";
@@ -67,7 +67,7 @@ public class DirectoryManagerBean implements DirectoryManager {
 
     @Override
     public Article findArticle(int id) {
-        Query q = em.createQuery("select art from Article a where art.id = :id");
+        Query q = em.createQuery("select art from Article a where a.id = :id");
         q.setParameter("id", id);
         return (Article) q.getSingleResult();
     }

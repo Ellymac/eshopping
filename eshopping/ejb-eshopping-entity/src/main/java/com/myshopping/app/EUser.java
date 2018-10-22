@@ -7,38 +7,46 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * The customer entity.
+ * The EUser entity.
  */
 @Entity
-public class Customer implements Serializable {
+public class EUser implements Serializable {
     /**
      * the serial number.
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * the unique pseudonym of the customer.
+     * the unique pseudonym of the user.
      */
     @Id
     private String pseudo;
     /**
-     * the first name of the customer.
+     * the password of the user.
+     */
+    private String password;
+    /**
+     * the first name of the user.
      */
     private String firstName;
     /**
-     * the last name of the customer.
+     * the last name of the user.
      */
     private String lastName;
     /**
-     * the postal address of the customer.
+     * the postal address of the user.
      */
     private String address;
     /**
-     * the email address of the customer.
+     * the email address of the user.
      */
     private String email;
+    /**
+     * the admin flag set to true if user is admin.
+     */
+    private boolean isAdmin;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "eUser")
     private List<OrderT> orderTS;
 
     /**
@@ -59,6 +67,10 @@ public class Customer implements Serializable {
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
 
     public String getFirstName() {
         return firstName;
@@ -91,4 +103,12 @@ public class Customer implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public boolean isAdmin() { return isAdmin; }
+
+    public void setAdmin(boolean admin) { isAdmin = admin; }
+
+    public List<OrderT> getOrderTS() { return orderTS; }
+
+    public void setOrderTS(List<OrderT> orderTS) { this.orderTS = orderTS; }
 }

@@ -15,8 +15,8 @@ public class OrderT implements Serializable {
     private Article article;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "CUSTOMER_ID")
-    private Customer customer;
+    @JoinColumn(name = "EUSER_ID")
+    private EUser eUser;
 
     private Date buyedAt;
 
@@ -37,12 +37,12 @@ public class OrderT implements Serializable {
         this.article = article;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public EUser geteUser() {
+        return eUser;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void seteUser(EUser eUser) {
+        this.eUser = eUser;
     }
 
     public Date getBuyedAt() {
