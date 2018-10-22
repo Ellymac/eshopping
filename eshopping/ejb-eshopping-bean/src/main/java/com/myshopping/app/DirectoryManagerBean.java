@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
 
 /**
  * The directory manager bean.
@@ -69,6 +70,11 @@ public class DirectoryManagerBean implements DirectoryManager {
         Query q = em.createQuery("select art from Article a where art.id = :id");
         q.setParameter("id", id);
         return (Article) q.getSingleResult();
+    }
+
+    //@Override
+    public List<Article> allArticles() {
+        return em.createQuery("FROM Article", Article.class).getResultList();
     }
 
     @Override

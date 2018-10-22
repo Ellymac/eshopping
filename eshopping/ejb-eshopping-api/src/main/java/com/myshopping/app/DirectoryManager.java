@@ -1,6 +1,7 @@
 package com.myshopping.app;
 
 import javax.ejb.Remote;
+import java.util.List;
 
 /**
  * The API of the directory manager entity bean.
@@ -48,6 +49,8 @@ public interface DirectoryManager {
      * @return the article or null if not found.
      */
     Article findArticle(int id);
+
+    List<Article> allArticles();
 
     /**
      * Delete Article.
